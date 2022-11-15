@@ -40,7 +40,7 @@ export class ReactformComponent implements OnInit {
     if(this.userForm.valid){
       console.log("User Information ",this.userForm.value);
     } else{
-      console.log("Some fields missing!.");
+      console.log("Some fields missing.");
     }
   }
 

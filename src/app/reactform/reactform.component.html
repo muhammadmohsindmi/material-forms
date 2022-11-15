@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <form (ngSubmit)="saveData()" [formGroup]="userForm" autocomplete="off" novalidate>
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" matInput type="text" placeholder="Enter First Name">
+            <mat-hint>Enter First Name</mat-hint>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" matInput type="text" placeholder="Last First Name">
+            <mat-hint>Enter Last Name</mat-hint>
+        </mat-form-field>
+        <br />
+        <mat-label>Gender</mat-label><br />
+        <mat-radio-group formControlName="gender" aria-label="Select an option">
+            <mat-radio-button value="male">Male</mat-radio-button> <br />
+            <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+        <br />
+        <mat-form-field>
+            <mat-select formControlName="rel" placeholder="Select Religion">
+                <mat-option *ngFor="let r of relegion" [value]="r.value">{{r.viewValue}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <button mat-flat-button color="primary">Save</button>
+
+    </form>
+</div>

@@ -13,6 +13,11 @@
             <mat-hint>Enter Last Name</mat-hint>
         </mat-form-field>
         <br />
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput fromControlName="email" type="text" placeholder="Enter Email ID">
+        </mat-form-field>
+        <br />
         <mat-label>Gender</mat-label><br />
         <mat-radio-group formControlName="gender" aria-label="Select an option">
             <mat-radio-button value="male">Male</mat-radio-button> <br />
@@ -24,7 +29,10 @@
                 <mat-option *ngFor="let r of relegion" [value]="r.value">{{r.viewValue}}</mat-option>
             </mat-select>
         </mat-form-field>
+        <br/>
+            <mat-checkbox formControlName="checked">Checked</mat-checkbox>
         <br />
+
         <button mat-flat-button color="primary">Save</button>
 
     </form>

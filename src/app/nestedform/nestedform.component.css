@@ -1,0 +1,13 @@
+h1{
+    margin: 10px;
+}
+form{
+    margin:10px;
+}
+mat-form-field{
+    margin: 10px 0;
+}
+.container{
+    margin: 20px;
+    border: 1px solid black;
+}

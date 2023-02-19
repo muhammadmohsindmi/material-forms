@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterilaModule } from './materila/materila.module';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReactformComponent } from './reactform/reactform.component';
+import { NestedformComponent } from './nestedform/nestedform.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReactformComponent
+    ReactformComponent,
+    NestedformComponent
   ],
   imports: [
     BrowserModule,

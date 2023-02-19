@@ -14,6 +14,9 @@ interface Relegion{
 
 export class ReactformComponent implements OnInit {
 
+  indeterminate = false;
+ 
+ 
   title = "Reactive Form";
   relegion: Relegion[] = [
     {'value':'hindu', 'viewValue':'Hindu'},
@@ -30,22 +33,27 @@ export class ReactformComponent implements OnInit {
   }
 
   userForm = new FormGroup({
-    firstName: new FormControl('',[Validators.required]),
+    firstName: new FormControl('',[Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     lastName: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.email, Validators.required]),
     gender: new FormControl('',[Validators.required]),
-    rel: new FormControl('',[Validators.required])
+    rel: new FormControl('',[Validators.required]),
+    checked: new FormControl('',[Validators.requiredTrue]),
   });
-
+  
   saveData(){
     if(this.userForm.valid){
-      console.log("User Information ",this.userForm.value);
+      if(this.userForm.get('checked')?.touched){
+        console.log("User Information ",this.userForm.value);
+      }
+      
     } else{
       console.log("Some fields missing.");
     }
   }
 
   constructor() { 
-    this.userForm.patchValue(this.userDetail);
+    this.userForm.patchValue(this.userDetail);    
   }
 
   ngOnInit(): void {
